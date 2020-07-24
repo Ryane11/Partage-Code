@@ -1,0 +1,19 @@
+<html>
+	<head>
+		<title>Partage ton code!</title>
+	</head>
+	<body>
+		<h1>Partage ton code!</h1>
+		<h2>Logs modifications</h2>
+		<a href="/">Retour accueil</a>
+
+		<ul>
+		{% if data %}
+			{% for row in data %}
+				<li>{{ row[0] }} | {{ row[1] }} | {{ row[2] }}| {{ row[3] }}</li>
+			{% endfor %}
+		{% endif %}
+		</ul>
+
+	</body>
+</html>

@@ -1,0 +1,24 @@
+<html>
+	<head>
+		<title>Partage ton code!</title>
+		<link href="/static/pygment_native.css" rel="stylesheet">
+	</head>
+	<body>
+		<h1>Partage ton code!</h1>
+		<img width=150 src='static/The_GNU_logo.png'/>
+
+		<form method="GET" action="/create">
+			<button name="create">Crée</button>
+		</form>
+
+		{% if data %}
+			<h2>Derniers ajouts -></h2>
+
+			{% for row in data %}
+				<p><a href="/view/{{ row.uid }}">{{ row.uid }}</a></p>
+				<p><pre class="highlight">{{ row.code|safe }}</pre></p>
+				<hr/>
+			{% endfor %}
+		{% endif %}
+	</body>
+</html>
